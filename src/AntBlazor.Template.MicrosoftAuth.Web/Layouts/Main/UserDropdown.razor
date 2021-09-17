@@ -1,0 +1,28 @@
+﻿@inject NavigationManager _navigationManager
+
+<AuthorizeView>
+    <Authorized>
+        <Dropdown Placement="@Placement.BottomLeft">
+            <Overlay>
+                <Menu>
+                    <MenuItem OnClick='() => _navigationManager.NavigateTo("/signout", true)'>
+                        Sign out
+                    </MenuItem>
+                    <MenuItem OnClick='() => _navigationManager.NavigateTo("/switch-user", true)'>
+                        Switch user
+                    </MenuItem>
+                </Menu>
+            </Overlay>
+            <ChildContent>
+                <AntDesign.Button Icon="user">
+                    <span style="padding-left: 0.25rem">
+                        @(context.User.FindFirst(ClaimTypes.GivenName)?.Value ?? "User")
+                    </span>
+                </AntDesign.Button>
+            </ChildContent>
+        </Dropdown>
+    </Authorized>
+    <NotAuthorized>
+        <Button Type="@ButtonType.Primary" OnClick='() => _navigationManager.NavigateTo("/signin", true)'>Sign in</Button>
+    </NotAuthorized>
+</AuthorizeView>

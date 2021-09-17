@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Marten" Version="3.13.4" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0-rc.1.21451.13" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AntBlazor.Template.MicrosoftAuth.Core\AntBlazor.Template.MicrosoftAuth.Core.csproj" />
+    </ItemGroup>
+
+</Project>

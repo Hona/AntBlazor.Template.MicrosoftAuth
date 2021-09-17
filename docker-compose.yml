@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      dockerfile: src/AntBlazor.Template.MicrosoftAuth.Web/Dockerfile
+      context: .
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ConnectionStrings__Marten=User ID = ewhasdfasdfhh;Password=o32342134k4r%Y#%Y345yRasdf;Server=postgres;Port=5432;Database=abc_db;Integrated Security=true;Pooling=true
+    volumes:
+      - ./config/appsettings.json:/app/appsettings.json
+    ports:
+      - "${PORT}:80"
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=ewhasdfasdfhh
+      - POSTGRES_PASSWORD=o32342134k4r%Y#%Y345yRasdf
+      - POSTGRES_DB=abc_db
+    volumes:
+      - ./data:/var/lib/postgresql/data

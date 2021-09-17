@@ -1,0 +1,27 @@
+﻿<Sider Breakpoint="@BreakpointType.Lg"
+       CollapsedWidth="64">
+    <div style="height: 32px;
+                    background: rgba(255, 255, 255, 0.2);
+                    margin: 16px;">
+    </div>
+    <Menu Mode="MenuMode.Inline" 
+          DefaultSelectedKeys=@(new[] { "4" })
+          Theme="MenuTheme.Dark">
+        <MenuItem Key="1">
+            <Icon Type="user" Theme="outline"/>
+            <span class="nav-text">nav 1</span>
+        </MenuItem>
+        <MenuItem Key="2">
+            <Icon Type="video-camera" Theme="outline"/>
+            <span class="nav-text">nav 2</span>
+        </MenuItem>
+        <MenuItem Key="3">
+            <Icon Type="upload" Theme="outline"/>
+            <span class="nav-text">nav 3</span>
+        </MenuItem>
+        <MenuItem Key="4">
+            <Icon Type="user" Theme="outline"/>
+            <span class="nav-text">nav 4</span>
+        </MenuItem>
+    </Menu>
+</Sider>
